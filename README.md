@@ -53,6 +53,74 @@ A full-stack web application for detecting dental pathologies in DICOM X-ray ima
 - **Git** (for cloning the repository)  
 
 ---
+## 🖥 Setup Instructions
+
+### 🔧 Backend (FastAPI)
+
+1. *Clone the Repository*
+
+   bash
+   git clone https://github.com/your-username/Dental-Xray.git
+   cd Dental-Xray/backend
+   
+
+2. *Create Virtual Environment*
+
+   bash
+   python -m venv venv
+   
+
+3. *Activate Virtual Environment*
+
+   * *Windows:*
+     powershell
+     venv\Scripts\activate
+   * *macOS/Linux:*
+     bash
+     source venv/bin/activate
+     
+
+4. *Install Dependencies*
+
+   bash
+   pip install -r requirements.txt
+   
+
+5. *Set Required Environment Variables*
+
+   bash
+   set GEMINI_API_KEY=your_Gemini_api_key
+   
+
+6. *Start FastAPI Server*
+
+   bash
+   uvicorn main:app --reload
+
+  Server runs at: [http://localhost:8000](http://localhost:8000)
+
+---
+
+### 🎨 Frontend (React)
+
+1. *Navigate to Frontend Folder*
+
+   bash
+   cd ../frontend
+   
+
+2. *Install Dependencies*
+
+   bash
+   npm install
+   
+
+3. *Start React App*
+    bash
+   npm start
+   
+
+   React runs at: [http://localhost:3000](http://localhost:3000)
 
 ## Usage
 Open the React dashboard at http://localhost:3000.
