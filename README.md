@@ -145,11 +145,11 @@ A concise diagnostic report is displayed in the UI.
 ## 📁 Project Structure
 
 project-root/
-├── backend/
+├── backend/ # Backend folder
 │ ├── main.py # FastAPI backend logic
 │ ├── requirements.txt # Python dependencies
 │ └── ... # (e.g., utils, .env, etc.)
-├── frontend/
+├── frontend/ # Frontend folder
 │ ├── src/ # React source code
 │ └── ... # (components, assets, etc.)
 ├── README.md # Project documentation
