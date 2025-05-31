@@ -1,79 +1,183 @@
-Oralcare : A Dental X-Ray Pathology Detection App
-A full-stack web application for detecting dental pathologies in DICOM X-ray images using Roboflow's object detection API and generating diagnostic reports via an LLM (Large Language Model). Users can upload dental DICOM files, view automated bounding box predictions, and receive AI-generated reports, all in a modern React dashboard.
+Oralcare: A Dental X-Ray Pathology Detection App
+A full-stack web application for detecting dental pathologies in DICOM X-ray images using Roboflow’s object detection API and generating diagnostic reports via a Large Language Model. Users can upload dental DICOM files, view automated bounding box predictions, and receive AI-generated reports—all in a modern React dashboard.
 
 Features
-Upload and view Dental DICOM (.dcm or .rvg) images
-Convert DICOM to grayscale PNG for visualization
-Detect dental pathologies using a Roboflow model
-Display bounding boxes for identified anomalies
-Generate AI-powered diagnostic reports using OpenAI or other LLMs
-Clean, responsive frontend built with React
-FastAPI backend for inference and report generation
+Upload and View DICOM
+— Accepts Dental DICOM files (.dcm or .rvg) and converts them into grayscale PNG for on-screen visualization.
+
+Automated Pathology Detection
+— Utilizes a Roboflow-trained object detection model to identify dental anomalies and draw bounding boxes around them.
+
+AI-Generated Diagnostic Reports
+— Leverages Google’s Gemini 2.0-flash (or OpenAI) to produce concise, human-readable diagnostic text based on model annotations.
+
+Responsive React Dashboard
+— Clean UI built with React and Tailwind CSS for an intuitive user experience.
+
+FastAPI Backend
+— Handles DICOM conversion, model inference, and orchestrates calls to the LLM for report generation.
+
+Secure and Scalable
+— Container-ready, easily deployable to services like Render, AWS, or Heroku.
 
 Tech Stack
-Frontend: React, Tailwind CSS Backend: FastAPI, Uvicorn AI Services: Roboflow (object detection), Gemini 2.0-flash (report generation) Languages: Python, JavaScript Others: DICOM (via pydicom), PIL (image conversion), inference-sdk
+Frontend
+
+React
+
+Tailwind CSS
+
+Backend
+
+FastAPI
+
+Uvicorn
+
+AI/ML Services
+
+Roboflow (Object Detection)
+
+Google Gemini 2.0-flash (Report Generation)
+
+Languages
+
+Python (Backend Inference, DICOM handling)
+
+JavaScript (React UI)
+
+Other
+
+pydicom & Pillow (DICOM → PNG conversion)
+
+inference-sdk (Roboflow client)
+
+python-dotenv (Environment variable management)
 
 📦 Prerequisites
-Node.js v14+
-Python 3.8+
-Git
+Node.js v14 or higher
+
+Python 3.8 or higher
+
+Git (for cloning the repository)
+
 🖥️ Setup Instructions
-🔧 Backend (FastAPI)
-Clone the Repository
-
+1. Clone the Repository
+bash
+Copy
+Edit
 git clone https://github.com/your-username/Dental-Xray.git
-cd Dental-Xray/backend
-Create Virtual Environment
+cd Dental-Xray
+2. Backend (FastAPI)
+Navigate to the backend folder
 
+bash
+Copy
+Edit
+cd backend
+Create a virtual environment
+
+bash
+Copy
+Edit
 python -m venv venv
-Activate Virtual Environment
+Activate the virtual environment
 
-Windows:
+Windows (PowerShell):
 
-venv\Scripts\activate
-macOS/Linux:
+powershell
+Copy
+Edit
+.\venv\Scripts\Activate.ps1
+macOS/Linux (Bash):
 
+bash
+Copy
+Edit
 source venv/bin/activate
-Install Dependencies
+Install Python dependencies
 
+bash
+Copy
+Edit
 pip install -r requirements.txt
 Set Required Environment Variables
+Create a local .env file (do not commit this to Git) with:
 
-set GEMINI_API_KEY=your_Gemini_api_key
-Start FastAPI Server
+env
+Copy
+Edit
+GEMINI_API_KEY=your_gemini_api_key_here
+ROBOFLOW_API_KEY=your_roboflow_api_key_here
+Start the FastAPI server
 
+bash
+Copy
+Edit
 uvicorn main:app --reload
-Server runs at: http://localhost:8000
+The backend will run at: http://localhost:8000
 
-🎨 Frontend (React)
-Navigate to Frontend Folder
+3. Frontend (React)
+Navigate to the frontend folder
 
+bash
+Copy
+Edit
 cd ../frontend
-Install Dependencies
+Install Node.js dependencies
 
+bash
+Copy
+Edit
 npm install
-Start React App
+Start the React development server
 
+bash
+Copy
+Edit
 npm start
-React runs at: http://localhost:3000
+The React app will run at: http://localhost:3000
 
 🧪 Usage
-Upload a Dental DICOM file (.dcm or .rvg).
-The image is converted to a visible format.
-Click Run Detection to identify anomalies.
-Bounding boxes are displayed on the image.
-An AI-generated diagnostic report appears in the dashboard.
+Open the React dashboard at http://localhost:3000.
+
+Click Upload DICOM and select a dental X-ray file (.dcm or .rvg).
+
+The backend converts it to a grayscale PNG and displays it on-screen.
+
+Click Run Detection to invoke the Roboflow model:
+
+Bounding boxes for detected pathologies appear overlaid on the image.
+
+Once detection is complete, click Generate Report:
+
+The app sends detected annotation data to the LLM endpoint (Gemini 2.0-flash).
+
+A concise diagnostic report is displayed in the UI.
+
 📁 Project Structure
-project-root/
+pgsql
+Copy
+Edit
+dental-xray/
 ├── backend/
 │   ├── main.py
 │   ├── requirements.txt
-│   └── ...
+│   ├── .env                # (not committed; for local environment variables)
+│   └── inference_sdk/      # (if using a local copy)
+│
 ├── frontend/
+│   ├── public/
 │   ├── src/
-│   └── ...
-├── README.md
-└── .gitignore
+│   │   ├── components/
+│   │   ├── api/
+│   │   │   └── client.js
+│   │   ├── App.jsx
+│   │   └── index.js
+│   ├── package.json
+│   └── tailwind.config.js
+│
+└── README.md
+
 📷 Preview
 ![Screenshot 2025-05-31 135847](https://github.com/user-attachments/assets/5b3e4cca-55ec-4ce4-b379-5db89ce2c907)
 ![Screenshot 2025-05-31 141248](https://github.com/user-attachments/assets/067901a9-6bcc-4129-961e-5f1aa5023dcf)
