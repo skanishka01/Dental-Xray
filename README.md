@@ -1,73 +1,69 @@
-Oralcare: A Dental X-Ray Pathology Detection App
+# Oralcare: A Dental X-Ray Pathology Detection App
+
 A full-stack web application for detecting dental pathologies in DICOM X-ray images using Roboflow’s object detection API and generating diagnostic reports via a Large Language Model. Users can upload dental DICOM files, view automated bounding box predictions, and receive AI-generated reports—all in a modern React dashboard.
 
-Features
-Upload and View DICOM
-— Accepts Dental DICOM files (.dcm or .rvg) and converts them into grayscale PNG for on-screen visualization.
+---
 
-Automated Pathology Detection
-— Utilizes a Roboflow-trained object detection model to identify dental anomalies and draw bounding boxes around them.
+## Features
 
-AI-Generated Diagnostic Reports
-— Leverages Google’s Gemini 2.0-flash (or OpenAI) to produce concise, human-readable diagnostic text based on model annotations.
+- **Upload and View DICOM**  
+  — Accepts Dental DICOM files (`.dcm` or `.rvg`) and converts them into grayscale PNG for on-screen visualization.  
+- **Automated Pathology Detection**  
+  — Utilizes a Roboflow-trained object detection model to identify dental anomalies and draw bounding boxes around them.  
+- **AI-Generated Diagnostic Reports**  
+  — Leverages Google’s Gemini 2.0-flash (or OpenAI) to produce concise, human-readable diagnostic text based on model annotations.  
+- **Responsive React Dashboard**  
+  — Clean UI built with React and Tailwind CSS for an intuitive user experience.  
+- **FastAPI Backend**  
+  — Handles DICOM conversion, model inference, and orchestrates calls to the LLM for report generation.  
+- **Secure and Scalable**  
+  — Container-ready, easily deployable to services like Render, AWS, or Heroku.
 
-Responsive React Dashboard
-— Clean UI built with React and Tailwind CSS for an intuitive user experience.
+---
 
-FastAPI Backend
-— Handles DICOM conversion, model inference, and orchestrates calls to the LLM for report generation.
+## Tech Stack
 
-Secure and Scalable
-— Container-ready, easily deployable to services like Render, AWS, or Heroku.
+- **Frontend**  
+  - React  
+  - Tailwind CSS  
 
-Tech Stack
-Frontend
+- **Backend**  
+  - FastAPI  
+  - Uvicorn  
 
-React
+- **AI/ML Services**  
+  - Roboflow (Object Detection)  
+  - Google Gemini 2.0-flash (Report Generation)  
 
-Tailwind CSS
+- **Languages**  
+  - Python (Backend Inference, DICOM handling)  
+  - JavaScript (React UI)  
 
-Backend
+- **Other**  
+  - `pydicom` & `Pillow` (DICOM → PNG conversion)  
+  - `inference-sdk` (Roboflow client)  
+  - `python-dotenv` (Environment variable management)  
 
-FastAPI
+---
 
-Uvicorn
+## 📦 Prerequisites
 
-AI/ML Services
+- **Node.js** v14 or higher  
+- **Python** 3.8 or higher  
+- **Git** (for cloning the repository)  
 
-Roboflow (Object Detection)
+---
 
-Google Gemini 2.0-flash (Report Generation)
+## 🖥️ Setup Instructions
 
-Languages
-
-Python (Backend Inference, DICOM handling)
-
-JavaScript (React UI)
-
-Other
-
-pydicom & Pillow (DICOM → PNG conversion)
-
-inference-sdk (Roboflow client)
-
-python-dotenv (Environment variable management)
-
-📦 Prerequisites
-Node.js v14 or higher
-
-Python 3.8 or higher
-
-Git (for cloning the repository)
-
-🖥️ Setup Instructions
-1. Clone the Repository
+### 1. Clone the Repository
 bash
 Copy
 Edit
 git clone https://github.com/your-username/Dental-Xray.git
 cd Dental-Xray
-2. Backend (FastAPI)
+### 2. Backend (FastAPI)
+Backend (FastAPI)
 Navigate to the backend folder
 
 bash
@@ -114,9 +110,9 @@ bash
 Copy
 Edit
 uvicorn main:app --reload
-The backend will run at: http://localhost:8000
+The backend will run at: http://localhost:800
 
-3. Frontend (React)
+### 3. Frontend (React)
 Navigate to the frontend folder
 
 bash
@@ -137,7 +133,7 @@ Edit
 npm start
 The React app will run at: http://localhost:3000
 
-🧪 Usage
+## Usage
 Open the React dashboard at http://localhost:3000.
 
 Click Upload DICOM and select a dental X-ray file (.dcm or .rvg).
@@ -154,7 +150,7 @@ The app sends detected annotation data to the LLM endpoint (Gemini 2.0-flash).
 
 A concise diagnostic report is displayed in the UI.
 
-📁 Project Structure
+## 📁 Project Structure
 pgsql
 Copy
 Edit
@@ -178,9 +174,9 @@ dental-xray/
 │
 └── README.md
 
-📷 Preview
+## Preview
 ![Screenshot 2025-05-31 135847](https://github.com/user-attachments/assets/5b3e4cca-55ec-4ce4-b379-5db89ce2c907)
 ![Screenshot 2025-05-31 141248](https://github.com/user-attachments/assets/067901a9-6bcc-4129-961e-5f1aa5023dcf)
 
-🔐 API Keys
+## API Keys
 Make sure to set your Gemini API key as environment variables before running the app
