@@ -2,7 +2,7 @@
 
 A full-stack web application for detecting dental pathologies in DICOM X-ray images using Roboflow’s object detection API and generating diagnostic reports via a Large Language Model. Users can upload dental DICOM files, view automated bounding box predictions, and receive AI-generated reports—all in a modern React dashboard.
 
----
+
 
 ## Features
 
