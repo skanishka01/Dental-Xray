@@ -1,6 +1,6 @@
 import axios from "axios";
 const client = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: "https://dental-xray-backend.onrender.com",
 });
 
 export default client;
