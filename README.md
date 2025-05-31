@@ -146,15 +146,14 @@ A concise diagnostic report is displayed in the UI.
 
 project-root/
 ├── backend/
-│   ├── main.py               # FastAPI backend logic
-│   ├── requirements.txt      # Python dependencies
-│   └── ...                   # (e.g., utils, .env, etc.)
+│ ├── main.py # FastAPI backend logic
+│ ├── requirements.txt # Python dependencies
+│ └── ... # (e.g., utils, .env, etc.)
 ├── frontend/
-│   ├── src/                  # React source code
-│   └── ...                   # (components, assets, etc.)
-├── README.md                 # Project documentation
-└── .gitignore                # Ignore config for Git
-
+│ ├── src/ # React source code
+│ └── ... # (components, assets, etc.)
+├── README.md # Project documentation
+└── .gitignore # Ignore config for Git
 
 ## Preview
 ![Screenshot 2025-05-31 135847](https://github.com/user-attachments/assets/5b3e4cca-55ec-4ce4-b379-5db89ce2c907)
