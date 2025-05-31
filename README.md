@@ -61,38 +61,41 @@ A full-stack web application for detecting dental pathologies in DICOM X-ray ima
 
    bash
    git clone https://github.com/your-username/Dental-Xray.git
+   
    cd Dental-Xray/backend
    
 
-2. *Create Virtual Environment*
+3. *Create Virtual Environment*
 
    bash
    python -m venv venv
    
 
-3. *Activate Virtual Environment*
+4. *Activate Virtual Environment*
 
    * *Windows:*
+     
      powershell
      venv\Scripts\activate
    * *macOS/Linux:*
+     
      bash
      source venv/bin/activate
      
 
-4. *Install Dependencies*
+5. *Install Dependencies*
 
    bash
    pip install -r requirements.txt
    
 
-5. *Set Required Environment Variables*
+6. *Set Required Environment Variables*
 
    bash
    set GEMINI_API_KEY=your_Gemini_api_key
    
 
-6. *Start FastAPI Server*
+7. *Start FastAPI Server*
 
    bash
    uvicorn main:app --reload
@@ -140,28 +143,19 @@ The app sends detected annotation data to the LLM endpoint (Gemini 2.0-flash).
 A concise diagnostic report is displayed in the UI.
 
 ## 📁 Project Structure
-pgsql
-Copy
-Edit
-dental-xray/
+
+
+project-root/
 ├── backend/
 │   ├── main.py
 │   ├── requirements.txt
-│   ├── .env                # (not committed; for local environment variables)
-│   └── inference_sdk/      # (if using a local copy)
-│
+│   └── ...
 ├── frontend/
-│   ├── public/
 │   ├── src/
-│   │   ├── components/
-│   │   ├── api/
-│   │   │   └── client.js
-│   │   ├── App.jsx
-│   │   └── index.js
-│   ├── package.json
-│   └── tailwind.config.js
-│
-└── README.md
+│   └── ...
+├── README.md
+└── .gitignore
+
 
 ## Preview
 ![Screenshot 2025-05-31 135847](https://github.com/user-attachments/assets/5b3e4cca-55ec-4ce4-b379-5db89ce2c907)
