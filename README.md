@@ -144,7 +144,6 @@ A concise diagnostic report is displayed in the UI.
 
 ## 📁 Project Structure
 
-
 project-root/
 ├── backend/
 │   ├── main.py
